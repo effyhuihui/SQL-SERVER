@@ -2,3 +2,14 @@ T-SQL FOR DATABASE CREATION
 =========================================
 CREATE DATABASE [TESTDB_NAME] 
 ON (FILENAME = 'D:\Data\DATABASE_DATA.mdf'), (FILENAME = 'D:\Tlogs\DATABASE_Log.ldf') FOR ATTACH;
+
+To Alter database from read only to read/write
+=========================================
+
+USE [master]
+GO
+ALTER DATABASE [DATABASE_NAME] SET READ_WRITE WITH NO_WAIT
+GO
+
+( in case there is execution error of permission, right clikc database name choose property--permission--view server permission
+and grant all)
