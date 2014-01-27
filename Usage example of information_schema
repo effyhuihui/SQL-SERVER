@@ -1,0 +1,9 @@
+
+usage of information_schema
+======================================================================================================================================================================
+select table_schema, table_name, column_name ,IS_NULLABLE, CASE WHEN DATA_TYPE ='VARCHAR' THEN Data_type + ' (' + CAST(CHARACTER_MAXIMUM_LENGTH AS VARCHAR(10)) + ') '
+ELSE 
+Data_type
+END
+from information_schema.columns 
+where table_name = ' ' and table_schema = ' '
